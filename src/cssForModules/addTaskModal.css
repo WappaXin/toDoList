@@ -1,0 +1,89 @@
+.addTaskModal{
+    position: fixed;
+    margin: auto;
+    width: 30%;
+    height: 60%;
+    border-radius: 10px ;
+}
+
+.addTaskModal::backdrop{
+    background-color: rgba(0, 0, 0, 0.815);
+}
+
+.addTaskModal > form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr 10fr 1fr 1fr 1fr;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    font-size: 1.5rem;
+    row-gap: 5px;
+    column-gap: 10px;
+}
+
+.addTaskModal .title , .addTaskModal #title , .addTaskModal .description , .addTaskModal #description {
+    grid-column: 1 / 3;
+}
+
+.addTaskModal .title {
+    grid-row: 1 / 2;
+    align-self: end;
+}
+
+.addTaskModal #title {
+    grid-row: 2 / 3;
+    font-size: 2rem;
+    padding: 5px ;
+}
+
+.addTaskModal .description{
+    grid-row: 3 / 4;
+    align-self: end;
+}
+
+.addTaskModal #description{
+    grid-row: 4 / 5;
+    resize: none;
+}
+
+.addTaskModal .dueDate{
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
+    align-self: end;
+}
+
+.addTaskModal #dueDate{
+    grid-column: 1 / 2;
+    grid-row: 6 / 7;
+    font-size: 1.5rem;
+}
+
+.addTaskModal .priority{
+    grid-column: 2 / 3;
+    grid-row: 5 / 6;
+    align-self: end;
+}
+
+.addTaskModal #priority{
+    grid-column: 2 / 3;
+    grid-row: 6 / 7;
+}
+
+.addTaskModal select{
+    font-size: 1.5rem;
+}
+
+.addTaskModal .btnContainer{
+    grid-column: 1 / 3;
+    grid-row: 7 / 8;
+    align-self: end;
+}
+
+#submitTaskModal , #closeModal{
+    font-size: 1.5rem;
+    width: fit-content;
+    padding: 0 5px;
+    border-radius: 5px;
+}
+

@@ -7,5 +7,48 @@
     </head>
     <body>
         
+        <div class="left">
+            <button class="allTasks">All To-Do's</button>
+            <button class="projects">Projects</button>
+            <div class="enterProjectNameDiv"></div>
+            <div class="projectsDisplay"></div>
+        </div>
+        
+        <div class="right">
+            <div class="rightHeader">
+                <h1>To-Do Lists</h1>
+                <div class="container">
+                    <button class="addProjectBtn">Add project</button>
+                    <button class="addTask">Add task</button>
+                </div>
+            </div>
+
+            <div class="displayingProjectName"></div>
+            <div class="display">
+
+            </div>
+        </div>
+
+        <dialog class="addTaskModal">
+            <form action="" id="taskForm">
+                <label for="title" class="title">Title :</label>
+                <input type="text" id="title">
+                <label for="description" class="description">Description :</label>
+                <textarea name="description" id="description" rows="10" cols="50"></textarea>
+                <label for="dueDate" class="dueDate">Due-Date:</label>
+                <input type="date" id="dueDate">
+                <label for="priority" class="priority">Priority:</label>
+                <select name="priority" id="priority">
+                    <option value="low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+                <div class="btnContainer">
+                    <input type="submit" id="submitTaskModal">
+                    <button id="closeModal">Close</button>
+                </div>
+            </form>
+        </dialog>
+
     </body>
 </html>

@@ -1,0 +1,79 @@
+.displayingProjectName{
+    width: 100%;
+    /* height: 5%; */
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 900;
+    padding-top: 10px;
+}
+
+#displayingAllTasks , #displayingProject{
+    display: flex;
+    flex-direction: column;
+}
+
+.shortCardInAllTasks , .shortCardInAProject{
+    width: 90%;
+    height: 3.2rem;
+    border: 2px solid black;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.shortCardInAllTasks > .container , .shortCardInAProject > .container {
+    width: 100%;
+    max-height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr 3fr 5fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 1px;
+    font-size: 1.3rem;
+
+}
+
+.shortCardInAllTasks > .container > p , .shortCardInAProject > .container > p{
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.shortCardInAllTasks > .container > button , .shortCardInAProject > .container > button{
+    background-color: white;
+    border: none;
+}
+
+.shortCardInAllTasks > .container > button:hover , .shortCardInAProject > .container > button:hover{
+    background-color: bisque;
+    border-radius: 10px;
+    transition: 0.1s;
+}
+
+/* Click More button in Short-card */
+
+.showingDescription{
+    width: 90%;
+    height: auto;
+    border: 2px solid black;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.descriptionOfTheTask{
+    width: 100%;
+    height: auto;
+    font-size: 1.2rem;
+    padding: 10px;
+    overflow-wrap: break-word;
+    background-color: rgb(160, 228, 228);
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+/* change the checklist (completed task) */
+
+.shortCardInAllTasks.completed > .container > p , .shortCardInAProject.completed > .container > p{
+    text-decoration: line-through;
+}

@@ -1,0 +1,24 @@
+#displayingAllProjects{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(350px , 1fr));
+    grid-template-rows: repeat(8 , 1fr);
+    grid-auto-flow: row;
+    gap: 10px;
+}
+
+.projectInRightDisplay{
+    border: 2px solid black;
+    font-size: 3rem;
+    height: 5rem;
+    border-radius: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 10px;
+}
+
+.projectInRightDisplay:hover{
+    background-color: black;
+    color: white;
+    transition: 0.5s ;
+}

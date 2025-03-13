@@ -1,0 +1,90 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.left{
+    width: 20%;
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.right{
+    width: 80%;
+    min-height: 100vh;
+    background-color: white;
+    color: rgb(91, 91, 228);
+    padding: 15px;
+}
+
+.left > button{
+    font-size: 1.5rem;
+    width: fit-content;
+    padding: 5px;
+    margin: 10px 0;
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+}
+
+.left > button:hover{
+    border-bottom: 2px solid white;
+}
+
+.rightHeader{
+    width: 100%;
+    min-height: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid rgb(167, 167, 238);
+    box-shadow: 0 2px 2px rgb(133, 131, 131);
+}
+
+.rightHeader > h1{
+    padding: 15px;
+}
+
+.rightHeader > .container{
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addProjectBtn , .addTask{
+    font-size: max(1.2rem , 1.7rem);
+    padding: 15px;
+    border: none;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.addProjectBtn:hover , .addTask:hover{
+    background-color: rgb(202, 198, 198);
+}
+
+.right > .display{
+    width: 100%;
+    min-height: 80%;
+    padding: 15px;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+}

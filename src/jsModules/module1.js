@@ -1,4 +1,4 @@
-export function toDoList(){
+export function toDoListLogic(){
 
     const allToDoItems = [];
 
@@ -10,6 +10,7 @@ export function toDoList(){
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
+        this.status = "Pending" ;
         this.id = id;
         }
     }
@@ -17,6 +18,7 @@ export function toDoList(){
     const createProject = (projectName) => {
         for(let project in allProjects){
             if(project === projectName){
+                alert("There is a project with that name already.");
                 return;
             }
         }
@@ -27,7 +29,9 @@ export function toDoList(){
 
     let idValue = 0;
 
-    const idCount = () => { return idValue++ ;}
+    const changeIdToHighest = (highestId) => { idValue = highestId ;}
+
+    const idCount = () => { return ++idValue ;}
 
     const createToDoItem = (title, description, dueDate, priority) => {
 
@@ -35,12 +39,10 @@ export function toDoList(){
     
     }
 
-    const isInAProject = (projectName) => {
+    const isInAllProject = (projectName) => {
         for(let project in allProjects){
             if(project === projectName){
                 return true;
-            } else {
-                return false;
             }
         }
     }
@@ -49,7 +51,7 @@ export function toDoList(){
 
     const addToDoItemToProject = (arrayName ,title, description, dueDate, priority) => {
 
-        if( isInAProject(arrayName) === true ){
+        if( isInAllProject(arrayName) === true ){
 
             allProjects[arrayName].push(createToDoItem(title, description, dueDate, priority));
             // we are not using addToDoItemToAll function besause it assigns a new id everytime we create a toDoItem
@@ -85,9 +87,35 @@ export function toDoList(){
         delete allProjects[projectName];
     }
 
-    const getAllToDoItems = () => {return allToDoItems}
+    const getAllToDoItems = () => {return allToDoItems};
 
-    const getAllProjects = () => {return allProjects}
+    const getAllProjects = () => {return allProjects};
 
-    return {createProject, addToDoItemToAll, addToDoItemToProject , removeToDoItem, getAllToDoItems, getAllProjects, removeProject };
+    const getAllToDoItemsInAProject = (projectName) => { 
+        for( let project in allProjects){
+            if(project === projectName){
+                console.log(project);
+                console.log(projectName);
+                console.log(allProjects[projectName]);
+                return allProjects[projectName];
+            }
+        }
+     }
+
+    const pushDataInAllToDoItems = (element) => { allToDoItems.push(element) } ;
+
+    const pushDataInAllProjects = ( projectName , project ) => { allProjects[projectName] = project } ;
+
+    return {createProject,
+            addToDoItemToAll,
+            addToDoItemToProject ,
+            removeToDoItem,
+            removeProject,
+            getAllToDoItems,
+            getAllProjects,
+            getAllToDoItemsInAProject,
+            pushDataInAllToDoItems,
+            pushDataInAllProjects,
+            changeIdToHighest
+            };
 }
